@@ -1,0 +1,345 @@
+.dooble-cookie-admin-wrap {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+.dcc-header {
+    background: #fff;
+    padding: 18px 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-right: 4px solid #2271b1;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+}
+
+.dcc-header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dcc-header-title h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.dcc-header-title .dashicons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: #2271b1;
+}
+
+.dcc-version {
+    background: #e8f0fa;
+    color: #0c447c;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.dcc-nav-tabs.nav-tab-wrapper {
+    border-bottom: 2px solid #dcdcde;
+    margin-bottom: 16px;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.dcc-nav-tabs .nav-tab {
+    font-size: 13px;
+    font-weight: 400;
+    padding: 9px 18px;
+    border: none;
+    background: transparent;
+    color: #646970;
+    margin-left: 2px;
+    position: relative;
+    transition: color 0.15s ease;
+    border-radius: 0;
+}
+
+.dcc-nav-tabs .nav-tab:hover {
+    color: #2271b1;
+    background: transparent;
+}
+
+.dcc-nav-tabs .nav-tab-active,
+.dcc-nav-tabs .nav-tab-active:hover {
+    color: #2271b1;
+    background: transparent;
+    font-weight: 600;
+}
+
+.dcc-nav-tabs .nav-tab-active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #2271b1;
+    border-radius: 0;
+}
+
+.dcc-tab-panel {
+    display: none;
+}
+
+.dcc-tab-panel.dcc-active {
+    display: block;
+}
+
+.dcc-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    padding: 0 24px;
+    margin-bottom: 16px;
+}
+
+.dcc-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.dcc-row:last-child {
+    border-bottom: none;
+}
+
+.dcc-row.toggle-row {
+    align-items: center;
+    padding: 18px 0;
+}
+
+.dcc-label {
+    width: 35%;
+    flex-shrink: 0;
+    padding-left: 16px;
+    box-sizing: border-box;
+}
+
+.dcc-label label {
+    font-weight: 600;
+    font-size: 13px;
+    color: #1d2327;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.dcc-desc {
+    font-size: 12px;
+    color: #646970;
+    display: block;
+    line-height: 1.5;
+}
+
+.dcc-field {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.dcc-input-number {
+    padding: 6px 10px !important;
+    border-radius: 4px !important;
+    border: 1px solid #8c8f94 !important;
+    width: 90px;
+    font-size: 13px;
+    box-shadow: none !important;
+}
+
+.dcc-input-text {
+    width: 100%;
+    max-width: 420px;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    border: 1px solid #8c8f94 !important;
+    font-size: 13px;
+    box-shadow: none !important;
+}
+
+.dcc-textarea-code {
+    font-family: Consolas, Monaco, "Courier New", monospace !important;
+    padding: 14px !important;
+    border-radius: 6px !important;
+    border: 1px solid #8c8f94 !important;
+    direction: ltr !important;
+    text-align: left !important;
+    line-height: 1.6;
+    font-size: 13px;
+    resize: vertical;
+    box-shadow: none !important;
+}
+
+.dcc-switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.dcc-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.dcc-slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #cbd5e1;
+    transition: background-color 0.25s;
+    border-radius: 22px;
+}
+
+.dcc-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    right: 3px;
+    left: auto;
+    bottom: 3px;
+    background-color: #fff;
+    transition: transform 0.25s;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+.dcc-switch input:checked + .dcc-slider {
+    background-color: #2271b1;
+}
+
+.dcc-switch input:focus-visible + .dcc-slider {
+    outline: 2px solid #2271b1;
+    outline-offset: 2px;
+}
+
+.dcc-switch input:checked + .dcc-slider:before {
+    transform: translateX(-22px);
+}
+
+.dcc-media-uploader {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.dcc-buttons-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.dcc-btn-danger {
+    color: #b32d2e !important;
+    border-color: #e6b3b3 !important;
+}
+
+.dcc-btn-danger:hover {
+    background: #fcf0f1 !important;
+    color: #b32d2e !important;
+    border-color: #b32d2e !important;
+}
+
+.dcc-preview-box {
+    background: #f6f7f8;
+    border: 1px dashed #c3c4c7;
+    padding: 10px 14px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    min-height: 60px;
+}
+
+.dcc-preview-box img {
+    max-width: 120px;
+    max-height: 80px;
+    border-radius: 4px;
+    display: block;
+}
+
+.dcc-no-img {
+    font-size: 12px;
+    color: #8c8f94;
+    font-style: italic;
+}
+
+.dcc-submit-zone {
+    margin-top: 20px;
+    background: #fff;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.dcc-submit-zone p.submit {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.dcc-color-pair {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px 24px;
+	width: 100%;
+}
+.dcc-color-item {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+.dcc-color-item > label {
+	font-size: 12px;
+	color: #50575e;
+}
+@media (max-width: 782px) {
+    .dcc-row,
+    .dcc-row.toggle-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .dcc-label {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .dcc-field {
+        width: 100%;
+    }
+
+    .dcc-input-text {
+        max-width: 100%;
+    }
+
+    .dcc-header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
