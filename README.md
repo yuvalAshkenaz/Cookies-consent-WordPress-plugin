@@ -1,51 +1,51 @@
-# dooble cookies consent
+# dooble cookies consent – WordPress Plugin
 
-תוסף וורדפרס להצגת באנר הסכמה לקובצי Cookies: נגיש, בעברית, ותומך גם באנגלית ובערבית. התוסף מאפשר לערוך את ההודעה, את טקסט הכפתורים ואת צבעיהם, ולהריץ סקריפטים רק אחרי שהגולש לחץ על אישור.
+An accessible WordPress plugin that shows a cookie consent banner. It works in Hebrew and also supports English and Arabic. You can edit the message, the button text and the button colors, and run scripts only after the visitor accepts.
 
-- **גרסה:** 3.1
-- **עודכן לאחרונה:** 29/10/2026
-- **מאת:** dooble
-- **מאגר:** https://github.com/yuvalAshkenaz/cookies-consent/
+- **Version:** 3.1
+- **Last updated:** 29/10/2026
+- **Author:** dooble
+- **Repository:** https://github.com/yuvalAshkenaz/cookies-consent/
 
-## התקנה
+## Installation
 
-1. מעתיקים את התיקייה `dooble-cookie-consent` אל `wp-content/plugins/`.
-2. מפעילים את התוסף במסך **תוספים** בוורדפרס.
-3. מגדירים אותו בתפריט **הסכמה לקובצי Cookies** במערכת הניהול.
+1. Copy the `dooble-cookie-consent` folder to `wp-content/plugins/`.
+2. Activate the plugin on the WordPress **Plugins** screen.
+3. Set it up under **הסכמה לקובצי Cookies** (Cookie consent) in the admin menu.
 
-## הגדרות
+## Settings
 
-### הגדרות כלליות
-| הגדרה | תיאור |
+### General
+| Setting | Description |
 |---|---|
-| תוסף פעיל באתר | הפעלה או כיבוי של הבאנר באתר |
-| מצב בדיקה (מנהלים בלבד) | הבאנר מוצג רק למנהלים מחוברים |
-| תוקף העוגייה (בימים) | אחרי כמה ימים הבאנר יוצג שוב לגולש שאישר. ברירת המחדל היא 90 |
+| Plugin active | Turns the banner on or off on the site |
+| Test mode (admins only) | Shows the banner only to logged-in administrators |
+| Cookie lifetime (days) | How many days until the banner shows again to a visitor who accepted. The default is 90 |
 
-### תוכן ועיצוב הבאנר
-| הגדרה | תיאור |
+### Banner content and design
+| Setting | Description |
 |---|---|
-| תמונת הבאנר | לוגו או איור שמוצג לצד ההודעה |
-| תוכן ההודעה | הטקסט שמוצג בבאנר, אפשר לכלול בו קישורים |
-| כפתור אישור | הטקסט של כפתור האישור |
-| צבעי כפתור אישור | צבע רקע וצבע טקסט |
-| הסתר כפתור סירוב | מסתיר את כפתור הסירוב |
-| כפתור אי-הסכמה / סירוב | הטקסט של כפתור הסירוב |
-| צבעי כפתור סירוב | צבע רקע וצבע טקסט |
+| Banner image | A logo or illustration shown next to the message |
+| Message | The text shown in the banner. It can include links |
+| Accept button | The accept button text |
+| Accept button colors | Background color and text color |
+| Hide decline button | Hides the decline button |
+| Decline button | The decline button text |
+| Decline button colors | Background color and text color |
 
-צבעי ברירת המחדל עומדים בדרישת הניגודיות של WCAG AA (לפחות 4.5:1):
+The default colors meet the WCAG AA contrast requirement (at least 4.5:1):
 
-| כפתור | רקע | טקסט | ניגודיות |
+| Button | Background | Text | Contrast |
 |---|---|---|---|
-| אישור | `#0f7cab` | `#ffffff` | 4.68:1 |
-| סירוב | `#ffffff` | `#000000` | 21:1 |
+| Accept | `#0f7cab` | `#ffffff` | 4.68:1 |
+| Decline | `#ffffff` | `#000000` | 21:1 |
 
-אם משנים את הצבעים, כדאי לבדוק שהניגודיות בין הרקע לטקסט נשארת לפחות 4.5:1.
+If you change the colors, check that the contrast between background and text stays at 4.5:1 or higher.
 
-### קודים וסקריפטים
-קוד JavaScript נקי, בלי תגיות `<script>`. הקוד רץ בתוך הפונקציה `enableNonEssentialScripts()` ברגע שהגולש לוחץ על אישור, ובכל טעינת עמוד אחרי שכבר אישר.
+### Codes and scripts
+Plain JavaScript, without `<script>` tags. The code runs inside `enableNonEssentialScripts()` when the visitor clicks accept, and on every page load after they have accepted.
 
-דוגמה לטעינת סקריפט חיצוני:
+Example of loading an external script:
 
 ```js
 const s = document.createElement('script');
@@ -54,9 +54,9 @@ s.async = true;
 document.body.appendChild(s);
 ```
 
-## שילוב עם Google Tag Manager (Consent Mode)
+## Google Tag Manager (Consent Mode)
 
-1. ב-`<head>` של האתר, לפני קוד ה-GTM, מגדירים שהכל חסום כברירת מחדל:
+1. In the site `<head>`, before the GTM snippet, deny everything by default:
 
 ```html
 <script>
@@ -71,7 +71,7 @@ document.body.appendChild(s);
 </script>
 ```
 
-2. בהגדרה **סקריפטים להפעלה לאחר אישור** מדביקים:
+2. In the **Scripts to run after approval** setting, paste:
 
 ```js
 gtag('consent', 'update', {
@@ -82,23 +82,23 @@ gtag('consent', 'update', {
 });
 ```
 
-דוגמאות נוספות נמצאות בקובץ `הטמעת סקריפטים.txt`.
+More examples are in `הטמעת סקריפטים.txt`.
 
-## איך זה עובד
+## How it works
 
-- **אישור:** נשמרת עוגייה בשם `od_consent` עם הערך `1`, לפי מספר הימים שהוגדר, והסקריפטים מופעלים.
-- **סירוב:** הבחירה נשמרת ב-`sessionStorage` בלבד. הבאנר לא יוצג שוב עד סוף הביקור, ושום סקריפט לא נטען.
-- **אחרי בחירה:** הבאנר לא מוצג לגולש שיש לו כבר עוגיית הסכמה.
+- **Accept:** saves an `od_consent` cookie with the value `1` for the configured number of days, and runs the scripts.
+- **Decline:** saves the choice in `sessionStorage` only. The banner stays hidden until the end of the visit, and no scripts load.
+- **After a choice:** the banner is not shown to a visitor who already has the consent cookie.
 
-## נגישות
+## Accessibility
 
-- הבאנר מסומן כאזור (`role="region"`) עם `aria-label`.
-- הכפתורים הם רכיבי `button` אמיתיים, והפוקוס עובר לכפתור האישור כשהבאנר מוצג.
-- צבעי ברירת המחדל עומדים בניגודיות של WCAG AA.
+- The banner is a region (`role="region"`) with an `aria-label`.
+- The buttons are real `button` elements, and focus moves to the accept button when the banner appears.
+- The default colors meet WCAG AA contrast.
 
-## התאמת עיצוב עם משתני CSS
+## Customizing with CSS variables
 
-כל העיצוב בנוי על משתני CSS שאפשר לדרוס מהתבנית, למשל:
+All styles are built on CSS variables that the theme can override, for example:
 
 ```css
 .consent {
@@ -113,17 +113,17 @@ gtag('consent', 'update', {
 }
 ```
 
-הצבעים שנבחרים בהגדרות התוסף מוגדרים על `.consent`, ולכן הם גוברים על ערכים שהתבנית מגדירה ב-`:root`.
+Colors chosen in the plugin settings are set on `.consent`, so they win over values the theme sets on `:root`.
 
-הרשימה המלאה של המשתנים נמצאת ב-`assets/cookie-consent.css`.
+The full list of variables is in `assets/cookie-consent.css`.
 
-## יומן שינויים
+## Changelog
 
 ### 3.1 (29/10/2026)
-- נוספו בוחרי צבע לרקע ולטקסט של כפתורי האישור והסירוב.
-- צבע ברירת המחדל של כפתור האישור הוחלף ל-`#0f7cab`, כדי לעמוד בניגודיות של WCAG AA.
-- שורת צבעי כפתור הסירוב מוסתרת יחד עם הכפתור.
-- מספר הגרסה מצורף לכתובות קבצי ה-CSS וה-JS, כדי שהדפדפן לא יטען גרסה ישנה מהמטמון.
+- Added background and text color pickers for the accept and decline buttons.
+- Changed the default accept button color to `#0f7cab` to meet WCAG AA contrast.
+- The decline button color row is hidden together with the button.
+- The version is added to the CSS and JS URLs so browsers don't load an old cached copy.
 
 ### 3.0 (18/06/2026)
-- מסך הגדרות חדש עם לשוניות, על בסיס הגדרות וורדפרס המובנות.
+- New tabbed settings screen built on the native WordPress Settings API.
