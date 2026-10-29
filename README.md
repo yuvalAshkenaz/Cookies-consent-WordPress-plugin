@@ -5,7 +5,7 @@ An accessible WordPress plugin that shows a cookie consent banner. It works in H
 - **Version:** 3.1
 - **Last updated:** 29/10/2026
 - **Author:** dooble
-- **Repository:** https://github.com/yuvalAshkenaz/cookies-consent/
+- **Repository:** https://github.com/yuvalAshkenaz/Cookies-consent-WordPress-plugin
 
 ## Installation
 

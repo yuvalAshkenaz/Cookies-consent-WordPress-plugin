@@ -5,7 +5,7 @@ Description: An accessible cookies consent plugin with customizable message and 
 Author: dooble
 Version: 3.1
 Last updated: 29/10/2026
-https://github.com/yuvalAshkenaz/cookies-consent/
+https://github.com/yuvalAshkenaz/Cookies-consent-WordPress-plugin
 */
 
 define('DOOBLE_COOKIE_CONSENT_VERSION', '3.1');
